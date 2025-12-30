@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Virtual do Haghii</title>
+    <link rel="stylesheet" href="fichahaghii.css">
+</head>
+<body class="dados">
+    <header class="info">
+       Nome do Personagem  :  <h1>Haghii'Un</h1>
+       <br>
+       Level : <h1> 20 </h1>
+       <br>
+       Raça: <h1>Asheet</h1>
+       <br>
+       Nome do Jogador: Pedro César
+       <br>
+       Proeficiência: <h1 id="proeficiencia"> 10 </h1>
+    </header>
+    <section>
+        <div class="atributos">
+            <div class="atributo" onmouseenter="mostrarValorS('sabedoria')" onmouseleave="restaurarValorS('sabedoria')">
+                <span id='sabedoria'>18</span>
+                <span class="nome">Sabedoria</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorC('carisma')" onmouseleave="restaurarValorC('carisma')">
+                <span id='carisma'>33</span>
+                <span class="nome">Carisma</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorI('inteligencia')" onmouseleave="restaurarValorI('inteligencia')">
+                <span id='inteligencia'>22</span>
+                <span class="nome">Inteligência</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorD('destreza')" onmouseleave="restaurarValorD('destreza')">
+                <span id='destreza'>37</span>
+                <span class="nome">Destreza</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorF('forca')" onmouseleave="restaurarValorF('forca')">
+                <span id='forca'>23</span>
+                <span class="nome">Força</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorCo('constituicao')" onmouseleave="restaurarValorCo('constituicao')">
+                <span id='constituicao'>18</span>
+                <span class="nome">Constituição</span>
+            </div>
+        </div>
+        <div class="pericias">
+            <div class="periciasS">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Intuição">Intuição: <input type="number"
+                            name="Intuição"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Religião">Religião: <input type="number"
+                            name="religião"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Medicina">Medicina: <input type="number"
+                            name="medicina"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Natureza">Natureza: <input type="number"
+                            name="natureza"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Percepção">Percepção: <input type="number"
+                            name="percepção"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Sobrevivência">Sobrevivência: <input
+                            type="number" name="sobrevivência"></li>
+                </ul>
+            </div>
+            <div class="periciasC">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Atuação">Atuação: <input type="number"
+                            name="atuação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Enganação">Enganação: <input type="number"
+                            name="enganação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Intimidação">Intimidação: <input
+                            type="number" name="intimidação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Persuasão">Persuasão: <input type="number"
+                            name="persuasão"></li>
+                </ul>
+            </div>
+            <div class="periciasI">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Arcanismo">Arcanismo: <input type="number"
+                            name="arcanismo"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="História">História: <input type="number"
+                            name="história"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Investigação">Investigação: <input
+                            type="number" name="investigação"></li>
+                </ul>
+            </div>
+            <div class="periciasD">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Acrobacia">Acrobacia: <input type="number"
+                            name="acrobacia"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Furtividade">Furtividade: <input
+                            type="number" name="furtividade"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Invadir">Invadir: <input type="number"
+                            name="invadir"></li>
+                </ul>
+            </div>
+            <div class="periciasF">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Atletismo">Atletismo: <input type="number"
+                            name="atletismo"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Força_Bruta">Força Bruta: <input
+                            type="number" name="força_bruta"></li>
+                </ul>
+            </div>
+            <div class="periciasCO">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Fortitude">Fortitude: <input type="number"
+                            name="Fortitude"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; PedroAulas</p>
+    </footer>
+    <script src="fichahaghii.js"></script>
+</body>
+</html>

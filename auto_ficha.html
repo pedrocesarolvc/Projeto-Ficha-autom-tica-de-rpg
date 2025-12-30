@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Virtual</title>
+    <link rel="stylesheet" href="auto_ficha.css">
+</head>
+
+<body class="dados">
+    <header class="info">
+        Nome do Personagem : <h1>Qualquer um</h1>
+        <br>
+        Level : <h1><input type="number" id="level" onmouseleave="calcularLevel()"> </h1>
+        <br>
+        Raça: <h1><div class="resultado" id="resultado"></div> <!--aqui será o seletor-->
+        <select name="racas" id="racas" onchange="mostrarRaca()">
+            <option value="" disabled selected>Selecione uma raça</option>
+            <option value="humano">Humano</option>
+            <option value="northun">Northun</option>
+            <option value="asheet">Asheet</option>
+            <option value="thundariano">Thundariano</option>
+            <option value="lumas">Lumas</option>
+        </select> </h1>
+        <br>
+        Nome do Jogador: Pedro César
+        <br>
+        Proeficiência : <h1><span id="proeficiencia"></span> </h1>
+    </header>
+    <section>
+        <div class="atributos">
+            <div class="atributo" onmouseenter="mostrarValorS('sabedoria')" onmouseleave="restaurarValorS('sabedoria')"
+                onclick="editarAtributo('sabedoria')">
+                <span id='sabedoria' class="valor-atributo"></span>
+                <input type="number" id='input-sabedoria' class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('sabedoria')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Sabedoria</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorC('carisma')" onmouseleave="restaurarValorC('carisma')"
+                onclick="editarAtributo('carisma')">
+                <span id='carisma' class="valor-atributo"></span>
+                <input type="number" id="input-carisma" class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('carisma')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Carisma</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorI('inteligencia')"
+                onmouseleave="restaurarValorI('inteligencia')" onclick="editarAtributo('inteligencia')">
+                <span id='inteligencia' class="valor-atributo"></span>
+                <input type="number" id="input-inteligencia" class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('inteligencia')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Inteligência</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorD('destreza')" onmouseleave="restaurarValorD('destreza')"
+                onclick="editarAtributo('destreza')">
+                <span id='destreza' class="valor-atributo"></span>
+                <input type="number" id="input-destreza" class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('destreza')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Destreza</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorF('forca')" onmouseleave="restaurarValorF('forca')"
+                onclick="editarAtributo('forca')">
+                <span id='forca' class="valor-atributo"></span>
+                <input type="number" id="input-forca" class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('forca')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Força</span>
+            </div>
+            <div class="atributo" onmouseenter="mostrarValorC('constituicao')"
+                onmouseleave="restaurarValorC('constituicao')" onclick="editarAtributo('constituicao')">
+                <span id='constituicao' class="valor-atributo"></span>
+                <input type="number" id="input-constituicao" class="input-atributo" style="display: none;"
+                    onblur="atualizarAtributo('constituicao')" onkeypress="if(event.key === 'Enter') this.blur()">
+                <span class="nome">Constituição</span>
+            </div>
+        </div>
+        <div class="pericias">
+            <div class="periciasS">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Intuição">Intuição: <input type="number"
+                            name="Intuição"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Religião">Religião: <input type="number"
+                            name="religião"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Medicina">Medicina: <input type="number"
+                            name="medicina"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Natureza">Natureza: <input type="number"
+                            name="natureza"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Percepção">Percepção: <input type="number"
+                            name="percepção"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Sobrevivência">Sobrevivência: <input
+                            type="number" name="sobrevivência"></li>
+                </ul>
+            </div>
+            <div class="periciasC">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Atuação">Atuação: <input type="number"
+                            name="atuação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Enganação">Enganação: <input type="number"
+                            name="enganação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Intimidação">Intimidação: <input
+                            type="number" name="intimidação"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Persuasão">Persuasão: <input type="number"
+                            name="persuasão"></li>
+                </ul>
+            </div>
+            <div class="periciasI">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Arcanismo">Arcanismo: <input type="number"
+                            name="arcanismo"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="História">História: <input type="number"
+                            name="história"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Investigação">Investigação: <input
+                            type="number" name="investigação"></li>
+                </ul>
+            </div>
+            <div class="periciasD">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Acrobacia">Acrobacia: <input type="number"
+                            name="acrobacia"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Furtividade">Furtividade: <input
+                            type="number" name="furtividade"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Invadir">Invadir: <input type="number"
+                            name="invadir"></li>
+                </ul>
+            </div>
+            <div class="periciasF">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Atletismo">Atletismo: <input type="number"
+                            name="atletismo"></li>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Força_Bruta">Força Bruta: <input
+                            type="number" name="força_bruta"></li>
+                </ul>
+            </div>
+            <div class="periciasCO">
+                <ul>
+                    <li class="pericia" onclick="pericias(this)" data-nome="Fortitude">Fortitude: <input type="number"
+                            name="Fortitude"></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; PedroAulas</p>
+    </footer>
+    <script src="auto_ficha.js"></script>
+</body>
+
+</html>

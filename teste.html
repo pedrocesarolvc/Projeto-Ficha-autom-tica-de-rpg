@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha de Raça</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Raça:</h1>
+  <select name="racas" id="racas" onchange="mostrarRaca()">
+    <option value="" disabled selected>Selecione uma raça</option>
+    <option value="humano">Humano</option>
+    <option value="northun">Northun</option>
+    <option value="asheet">Asheet</option>
+  </select>
+
+  
+
+  <script>
+    function mostrarRaca() {
+      const selec = document.getElementById('racas');
+      const racaTxt = selec.options[selec.selectedIndex].text;
+      document.getElementById('resultado').textContent = "Você escolheu: " + racaTxt;
+    }
+  </script>
+
+</body>
+</html>
